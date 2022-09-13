@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../stilos/reset.css">
+    <link rel="stylesheet" href="../stilos/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Login</title>
 </head>
 <body>
-    <h1>funciona</h1>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Acesso não autorizado</h3>
+            </div>
+            <div class="modal-body">
+                <p>Essa conta não existe, logo não pode acessar a página</p>
+            </div>
+            <div class="modal-btn">
+                <button class="modal-close">Entendi</button>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="div-logo">
+            <img src="../assets/Group 3.png" alt="Kenzie Companies List">
+        </div>
+    </nav>
+    <main>
+        <form>
+            <input type="email" value="" placeholder="Seu email" id="email" required>
+            <input type="password" value="" placeholder="Sua senha" id="senha" required>
+
+            <button id="btn-logar">Logar</button>
+            <span>Não tenho uma conta?<a href="../pages/cadastro.html"> Resistre-se</Resistre-se></a></span>
+        </form>
+    </main>
+    <script type="module" src="../scripts/api.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
 </body>
 </html>

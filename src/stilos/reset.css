@@ -44,8 +44,9 @@ table {
 }
 
 :root {
-	--primaria: #07EBDD;
+	--primaria: #05B2A7;
 	--black: #000000;
 	--white: #FFFFFF;
 	--grey: #F1F1F1;
+	--grey-opacity-1:rgba(33, 37, 41, 0.5);
 }
