@@ -24,5 +24,11 @@ export class ApiRequests {
             headers: this.headers,
             body: JSON.stringify(body)
         })
+        .then(res => res.json())
+        .then(res => {
+            window.location.assign("../pages/login.html")
+            return res
+        })
+        .catch(err => console.log(err)) 
     }
 }
