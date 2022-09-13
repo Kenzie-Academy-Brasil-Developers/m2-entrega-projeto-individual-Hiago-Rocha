@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=S, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/stilos/reset.css">
+    <link rel="stylesheet" href="./src/stilos/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Home page</title>
 </head>
 <body>
     <nav>
-        <div>
+        <div class="div-logo">
             <img src="./src/assets/Kenzie Companies List.png" alt="">
             <label for="filtro">Filtro</label>
             <select name="filtro" id="filtro-home">
-                <option value=""></option>
-                <option value=""></option>
+                <option value="escolha um setor">escolha um setor</option>
             </select>
         </div>
-        <div>
+        <div class="div-botoes">
             <a href="./src/pages/login.html">Fazer login</a>
             <a href="./src/pages/cadastro.html">Registrar-se</a>
+            <button id="btn-filtrar">Filtrar</button>
         </div>
     </nav>
     <main>
-        <ul>
-            
+        <ul id="tagUL">
+
         </ul>
     </main>
+    <script type="module" src="./src/scripts/api.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
 </body>
 </html>
