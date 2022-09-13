@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stilos/reset.css">
+    <link rel="stylesheet" href="../stilos/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Cadastro</title>
 </head>
 <body>
     <nav>
-        
+        <div class="div-logo">
+            <img src="../assets/Kenzie Companies List.png" alt="Kenzie Companies List">
+        </div>
+        <div class="div-logo2">
+            <img src="../assets/pngfind.com-writing-png-332152.png" alt="imagem de uma folha e uma caneta">
+        </div>
     </nav>
+    <main>
+        <form>
+            <input type="text" value="" placeholder="Seu nome" id="nome" required>
+            <input type="email" value="" placeholder="Seu email" id="email" required>
+            <input type="text" value="" placeholder="Seu nivel Proficional" id="nivelTrabalho" required>
+            <input type="password" value="" placeholder="Sua senha" id="password" required>
+
+            <button id="btn-register">Cadastrar</button>
+            <span>já esta cadastrado?<a href="../pages/login.html"> Login</a></span>
+        </form>
+    </main>
+    <script type="module" src="../scripts/api.js"></script>
+    <script type="module" src="../scripts/cadastro.js"></script>
 </body>
 </html>
