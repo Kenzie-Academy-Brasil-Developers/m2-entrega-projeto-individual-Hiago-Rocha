@@ -78,5 +78,68 @@ export class ApiRequests {
         return funcionarios.results
     }
 
+    static async CadastraEmpresa(body){
+        const empresa = await fetch(`${this.baseUrl}companies`, {
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json)
+
+        .catch(err => console.log(err))
+
+    }
+
+    static async ListarDepartamentos(){
+        const lista = await fetch(`${this.baseUrl}departments`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => console.log(res))
+
+        .catch(err => console.log(err))
+
+        return lista
+    }
+
+    static async criaDepartamento(body){
+        const newDepartamento = await fetch(`${this.baseUrl}departments`, {
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json)
+        .then(res => {
+            return res
+        })
+
+        .catch(err => console.log(err))
+    }
+
+    static async ListarUsuarios(){
+        const NewList = await fetch(`${this.baseUrl}users`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => console.log(res))
+
+        .catch(err => console.log(err))
+
+        return NewList
+    }
+
+    static async UsuariosDesempregados(){
+        const userList = await fetch(`${this.baseUrl}admin/out_of_work`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => console.log(res))
+
+        .catch(err => console.log(err))
+
+        return userList.results
+    }
+    
+
     
 }

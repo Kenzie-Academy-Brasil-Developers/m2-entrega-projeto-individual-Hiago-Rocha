@@ -9,13 +9,18 @@ class dashbord {
           window.location.assign("../pages/login.html")
         }
 
-        if(admin === true){
+        if(admin === "true"){
           window.location.assign("../pages/dashbordAdimin.html")
         }
     }
 
     static renderMyInfos(UserInfo){
       console.log(UserInfo)
+      const userName = document.getElementById("userName")
+      const nivelProfissional = document.getElementById("nivelProfissional")
+
+      userName.innerText = `Nome:${UserInfo.username}`
+      nivelProfissional.innerText = `Nivel:${UserInfo.professional_level}`
     }
 
     static renderFuncionarios(setorFuncionarios){
@@ -29,7 +34,17 @@ class dashbord {
       //const funcionarios = setorFuncionarios.users
       
     }
+
+    static Sair(){
+      const btnSair = document.getElementById("btnSair")
+      btnSair.addEventListener("click", () => {
+        localStorage.clear()
+        window.location.assign("../../index.html")
+      })
+    }
 }
+
+dashbord.Sair()
 
 dashbord.verificaUser()
 
