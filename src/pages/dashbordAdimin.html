@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stilos/reset.css">
+    <link rel="stylesheet" href="../stilos/dashbord2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Dashbord Admin</title>
 </head>
 <body>
-    <div class="modal-wrapper">
-        <div class="modal">
-            <button>Listar funcionarios do seu departamento</button>
-            <button>listar todos os departamentos da sua empresa</button>
-            <button>Atualizar informações pessoais</button>
-        </div>
-    </div>
     <nav>
         <div class="div-logo">
             <img src="../assets/Group 3.png" alt="Kenzie Companies List">
         </div>
         <div class="div-button">
-            <img src="../assets/Group 6icon.png" alt="">
+            <select name="" id="opcoesDeBusca">
+                <option value="Lista de empresas">Lista de empresas</option>
+                <option value="Cadastrar Empresa">Cadastrar Empresa</option>
+                <option value="Criar departamento">Criar departamento</option>
+                <option value="Listar todos os departamentos">Listar todos os departamentos</option>
+                <option value="Listar todos os departamentos de uma empresa">Listar todos os departamentos de uma empresa</option>
+                <option value="listar todos os usuários">listar todos os usuários</option>
+                <option value="Usuários sem contratos">Usuários sem contratos</option>
+            </select>
+            <button id="btnBusca">Filtrar</button>
         </div>
     </nav>
     <main>
-        <section>
-            
-        </section>
-    </main>
+        <ul id="ancora">
 
+        </ul>
+    </main>
+    <script type="module" src="../scripts/api.js"></script>
+    <script type="module" src="../scripts/dashbord2.js"></script>
 </body>
 </html>
