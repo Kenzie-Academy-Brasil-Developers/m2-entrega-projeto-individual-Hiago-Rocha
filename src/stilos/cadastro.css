@@ -43,6 +43,16 @@ form > input{
     font-weight: 400;
     padding: 10px;
 }
+form > select{
+    width: 72%;
+    height: 60px;
+    background-color: var(--grey);
+    border-radius: 8px;
+    border:solid 1px var(--primaria);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+}
 form > button{
     margin-top: 20px;
     background-color: var(--primaria);

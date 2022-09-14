@@ -19,12 +19,12 @@ export class ApiRequests {
     }
 
     static async cadastrarUsuario(body){
+        console.log(body)
         const newUser = await fetch(`${this.baseUrl}auth/register/user`, {
             method: "POST",
             headers: this.headers,
             body: JSON.stringify(body)
         })
-        .then(res => res.json())
         .then(res => {
             window.location.assign("../pages/login.html")
             return res
@@ -44,7 +44,7 @@ export class ApiRequests {
                 localStorage.setItem("@kenzieCompanies:token", res.token)
                 localStorage.setItem("@kenzieCompanies:is_admin", res.is_admin)
                 localStorage.setItem("@kenzieCompanies:user_id", res.uuid)
-                window.location.assign("./src/pages/dashbord.html")
+                window.location.assign("../pages/dashbord.html")
             }else{
                 const modal = document.querySelector(".modal-wrapper")
                 modal.classList.toggle("show-modal")
@@ -53,4 +53,30 @@ export class ApiRequests {
         })
         .catch(err => console.log(err))
     }
+
+    static async InformaçoesUser(){
+        const UserInfo = await fetch(`${this.baseUrl}users/profile`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json())
+
+        .catch(err => console.log(err))
+
+        return UserInfo
+    }
+
+    static async BuscaFuncionarios(){
+        const funcionarios = await fetch(`${this.baseUrl}users/departments/coworkers`,{
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json)
+
+        .catch(err => console.log(err))
+
+        return funcionarios.results
+    }
+
+    
 }
