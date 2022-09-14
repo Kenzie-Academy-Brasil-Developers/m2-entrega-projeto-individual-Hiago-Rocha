@@ -23,7 +23,13 @@
         <form>
             <input type="text" value="" placeholder="Seu nome" id="nome" required>
             <input type="email" value="" placeholder="Seu email" id="email" required>
-            <input type="text" value="" placeholder="Seu nivel Proficional" id="nivelTrabalho" required>
+            
+            <select name="opçoes" id="nivelTrabalho"">
+                <option value="júnior">Júnior</option>
+                <option value="pleno">Pleno</option>
+                <option value="sênior">Sênior</option>
+                <option value="master">Master</option>
+            </select>
             <input type="password" value="" placeholder="Sua senha" id="password" required>
 
             <button id="btn-register">Cadastrar</button>

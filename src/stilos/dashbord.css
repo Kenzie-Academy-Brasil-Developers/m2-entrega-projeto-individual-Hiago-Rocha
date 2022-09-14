@@ -1,0 +1,56 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+nav{
+    display: flex;
+    background-color: var(--black);
+    justify-content: space-between;
+}
+.div-logo{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.div-logo > img{
+    width: 100;
+    height: 100;
+    margin-bottom: 10px;
+}
+.div-button > img{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#ancora{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+#ancora > li{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+
+
+
+
+
+/* -------Modal------- */
+
+.modal-wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: var(--grey-opacity-1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal{
+    background-color: var(--primaria);
+    width: 80%;
+    border-radius: 4px;
+}
