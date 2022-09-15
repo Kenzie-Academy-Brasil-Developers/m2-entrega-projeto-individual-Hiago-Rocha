@@ -71,7 +71,7 @@ export class ApiRequests {
             method: "GET",
             headers: this.headers
         })
-        .then(res => res.json)
+        .then(res => res.json())
 
         .catch(err => console.log(err))
 
@@ -84,7 +84,7 @@ export class ApiRequests {
             headers: this.headers,
             body: JSON.stringify(body)
         })
-        .then(res => res.json)
+        .then(res => res.json())
 
         .catch(err => console.log(err))
 
@@ -95,10 +95,11 @@ export class ApiRequests {
             method: "GET",
             headers: this.headers
         })
-        .then(res => console.log(res))
+        .then(res => res.json())
 
         .catch(err => console.log(err))
 
+        console.log(lista)
         return lista
     }
 
@@ -108,8 +109,9 @@ export class ApiRequests {
             headers: this.headers,
             body: JSON.stringify(body)
         })
-        .then(res => res.json)
+        .then(res => res.json())
         .then(res => {
+            window.location.assign("")
             return res
         })
 
@@ -122,24 +124,25 @@ export class ApiRequests {
             headers: this.headers
         })
         .then(res => console.log(res))
-
         .catch(err => console.log(err))
 
         return NewList
     }
 
-    static async UsuariosDesempregados(){
-        const userList = await fetch(`${this.baseUrl}admin/out_of_work`, {
+    static async UsuariosDesempregados() {
+        const userList = await fetch(`http://localhost:6278/admin/out_of_work`, {
             method: "GET",
             headers: this.headers
         })
-        .then(res => console.log(res))
-
+        .then(res => res.json())
         .catch(err => console.log(err))
 
-        return userList.results
+        return userList
+
     }
     
-
     
+
+
+
 }
