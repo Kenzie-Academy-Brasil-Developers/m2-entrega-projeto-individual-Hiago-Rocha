@@ -61,7 +61,7 @@ class renderDashbordAdimin{
         }else if(value === "listar todos os usuários"){
             renderDashbordAdimin.mostrarUsuarios(Usuarios)
         }else if(value === "Usuários sem contratos"){
-            renderDashbordAdimin.essaVai(userList)
+            renderDashbordAdimin.ListaUsuer(userList)
         }
     }
 
@@ -140,9 +140,25 @@ class renderDashbordAdimin{
             ancora.appendChild(tagH1)
         }
 
+        listaDP.forEach(departamento => {
+            const cardDp = renderDashbordAdimin.criaDp(departamento)
 
-        
+            ancora.appendChild(cardDp)
+        })
+    }
 
+    static criaDp(departamento){
+        const tagLi = document.createElement("li")
+        const tagH1 = document.createElement("h1")
+        const tagP  = document.createElement("p")
+        const tagH2 = document.createElement("h2")
+
+        tagH1.innerText = departamento.name
+        tagP.innerText = departamento.description
+        tagH2.innerText = `Departamento da empresa:${departamento.companies.name}`
+
+        tagLi.append(tagH1,tagP,tagH2)
+        return tagLi
     }
 
     static criarDepartamento(companies){
@@ -202,12 +218,40 @@ class renderDashbordAdimin{
         }
     }
 
-    static essaVai(userList){
+    static ListaUsuer(userList){
         const ancora = document.getElementById("ancora")
         ancora.innerHTML = ""
-        console.log(userList)
+        
+        if(userList === undefined){
+            const tagH1 = document.createElement("h1")
+            tagH1.innerText = "Não á usuarios cadastrados no momento  😞"
+            ancora.appendChild(tagH1)
+        }
+
+        userList.forEach(Usuario => {
+            const cardUser = renderDashbordAdimin.criaUser(Usuario)
+
+            ancora.appendChild(cardUser)
+        })
+
     }
 
+    static criaUser(Usuario){
+        const tagli = document.createElement("li")
+        const tagH1 = document.createElement("h1")
+        const tagP =  document.createElement("p")
+        const tagSpan = document.createElement("span")
+
+        tagH1.innerText = `Nome:${Usuario.username}`
+        tagP.innerText = `Nivel profissional:${Usuario.professional_level}`
+        if(Usuario.kind_of_work === undefined){
+            tagSpan.innerText = "Desempregado"
+        }
+        tagSpan.innerText = Usuario.kind_of_work
+
+        tagli.append(tagH1,tagP,tagSpan)
+        return tagli
+    }
 }
 
 const userList = await ApiRequests.UsuariosDesempregados()
@@ -223,6 +267,3 @@ const btnBusca = document.getElementById("btnBusca")
 btnBusca.addEventListener("click", () => {
     renderDashbordAdimin.pegaOpçao()
 })
-
-
-
